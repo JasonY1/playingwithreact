@@ -18,6 +18,7 @@
   // Set states at top level component to pass to children
   // Change the state once, re-render the entire thing
   // Owner is the component(message) sets the props(submessage)
+  // Prop validation
 
     var MessageBox = React.createClass({
 
@@ -40,6 +41,7 @@
           display: this.state.isVisible ? 'block' : 'none'
         };
 
+        // Using map to return a new set of components we are setting
         var messages = this.state.messages.map(function(message) {
           return <SubMessage message={message} />;
         });
