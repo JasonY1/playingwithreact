@@ -6,6 +6,7 @@ var ShowAddButton = require('./ShowAddButton');
 var FeedForm      = require('./FeedForm');
 var FeedList      = require('./FeedList');
 
+
 var Feed = React.createClass({displayName: 'Feed',
 
   getInitialState: function() {
@@ -15,8 +16,37 @@ var Feed = React.createClass({displayName: 'Feed',
       { key: '3', title: 'Coffee makes you awake', description: 'Drink responsibly', voteCount: 15},
     ];
     return {
-      items: FEED_ITEMS
+      items: FEED_ITEMS,
+      formDisplayed: false
     }
+  },
+
+  onToggleForm: function() {
+    this.setState({
+      formDisplayed: !this.state.formDisplayed
+    });
+  },
+
+  onNewItem: function(newItem) {
+    var newItems = this.state.items.concat([newItem]);
+    this.setState({
+      items: newItems,
+      formDisplayed: false,
+      key: this.state.items.length
+    });
+  },
+
+  onVote: function(item) {
+    var items = _.uniq(this.state.items);
+    var index = _.findIndex(items, function(feedItems) {
+      return feedItems.key === item.key;
+    });
+    var oldObj = items[index];
+    var newItems = _.pull(items, oldObj);
+    newItems.push(item);
+    this.setState({
+      items: newItems
+    });
   },
 
   render: function() {
@@ -24,15 +54,15 @@ var Feed = React.createClass({displayName: 'Feed',
       React.DOM.div(null, 
 
         React.DOM.div({className: "container"}, 
-          ShowAddButton(null)
+          ShowAddButton({displayed: this.state.formDisplayed, onToggleForm: this.onToggleForm})
         ), 
 
-        FeedForm(null), 
+        FeedForm({displayed: this.state.formDisplayed, onNewItem: this.onNewItem}), 
 
         React.DOM.br(null), 
         React.DOM.br(null), 
 
-        FeedList({items: this.state.items})
+        FeedList({items: this.state.items, onVote: this.onVote})
 
       )
     );
@@ -41,7 +71,6 @@ var Feed = React.createClass({displayName: 'Feed',
 });
 
 module.exports = Feed;
-
 },{"./FeedForm":2,"./FeedList":4,"./ShowAddButton":5,"react":151}],2:[function(require,module,exports){
 /** @jsx React.DOM */
 
@@ -49,43 +78,57 @@ var React = require('react');
 
 var FeedForm = React.createClass({displayName: 'FeedForm',
 
+  handleForm: function(e) {
+    e.preventDefault();
+
+    var newItem = {
+      title: this.refs.title.getDOMNode().value, 
+      description: this.refs.desc.getDOMNODE().value,
+      voteCount: 0
+    };
+
+    this.refs.feedForm.getDOMNode().reset();
+
+    this.props.onNewItem(newItem)
+  },
+
   render: function() {
+    var display = this.props.displayed ? 'block' : 'none';
+    var styles = {
+    display: display
+    };
     return (
-      React.DOM.form({className: "container"}, 
+      React.DOM.form({ref: "feedForm", style: styles, id: "feedForm", className: "container"}, 
         React.DOM.div({className: "form-group"}, 
-          React.DOM.input({type: "text", className: "form-control", placeholder: "Title"}), 
-          React.DOM.input({type: "text", className: "form-control", placeholder: "Description"}), 
+          React.DOM.input({ref: "title", type: "text", className: "form-control", placeholder: "Title"}), 
+          React.DOM.input({ref: "desc", type: "text", className: "form-control", placeholder: "Description"}), 
           React.DOM.button({type: "submit", className: "btn btn-primary btn-block"}, "Add")
         )
       )
     );
   }
-
 });
 
 module.exports = FeedForm;
-
 },{"react":151}],3:[function(require,module,exports){
 /** @jsx React.DOM */
 
 var React = require('react');
 
 var FeedItem = React.createClass({displayName: 'FeedItem',
-
   render: function() {
     return (
       React.DOM.li({className: "list-group-item"}, 
-        React.DOM.span({className: "badge badge-success"}, this.props.voteCount), 
+        React.DOM.span({className: "badge badge-success"}, "60"), 
         React.DOM.h4(null, this.props.title), 
         React.DOM.span(null, this.props.desc), 
         React.DOM.span({className: "pull-right"}, 
-            React.DOM.button({id: "up", className: "btn btn-sm btn-primary"}, "↑"), 
-            React.DOM.button({id: "down", className: "btn btn-sm btn-primary"}, "↓")
-          )
+          React.DOM.button({id: "up", className: "btn btn-sm btn-primary"}, "↑"), 
+          React.DOM.button({id: "down", className: "btn btn-sm btn-primary"}, "↓")
+        )
       )
     );
   }
-
 });
 
 module.exports = FeedItem;
@@ -101,12 +144,18 @@ var FeedList = React.createClass({displayName: 'FeedList',
   render: function() {
 
     var feedItems = this.props.items.map(function(item) {
-      return FeedItem({title: item.title, desc: item.description, voteCount: item.voteCount})
-    });
+      return FeedItem({key: item.key, 
+                       title: item.title, 
+                       desc: item.description, 
+                       voteCount: item.voteCount, 
+                       onVote: this.props.onVote})
+    }.bind(this));
 
     return (
-      React.DOM.ul({className: "list-group container"}, 
-        feedItems
+      React.DOM.div({className: "container"}, 
+        React.DOM.ul({className: "list-group"}, 
+          feedItems
+        )
       )
     );
   }
@@ -114,28 +163,40 @@ var FeedList = React.createClass({displayName: 'FeedList',
 });
 
 module.exports = FeedList;
-
 },{"./FeedItem":3,"react":151}],5:[function(require,module,exports){
 /** @jsx React.DOM */
 
 var React = require('react');
 
 var ShowAddButton = React.createClass({displayName: 'ShowAddButton',
-
   render: function() {
+
+    var classString, buttonText;
+
+    if(this.props.displayed) {
+      classString = 'btn btn-default btn-block';
+      buttonText = 'Cancel';
+    } else {
+      classString = 'btn btn-success btn-block';
+      buttonText = 'Create New Item';
+    }
+
     return (
-      React.DOM.button({className: "btn btn-success btn-block"}, "Create New Item")
+      React.DOM.button({className: classString, 
+              onClick: this.props.onToggleForm}, 
+              buttonText
+      )
     );
   }
-
 });
 
 module.exports = ShowAddButton;
-
 },{"react":151}],6:[function(require,module,exports){
 /** @jsx React.DOM */
+
 var React = require('react'),
-    Feed = require('./components/Feed');
+    Feed  = require('./components/Feed')
+
 
 React.renderComponent(
   Feed(null),

@@ -7,10 +7,10 @@ var gulp = require('gulp'),
 
 // browserify and transform JSX
 gulp.task('browserify', function() {
-  gulp.src('./app/src/js/components/main.js')
-  .pipe(browserify({ transform: 'reactify' }))
-  .pipe(gulp.dest('./app/dist/js'));
-})
+    gulp.src('./app/src/js/main.js')
+      .pipe(browserify({transform: 'reactify'}))
+      .pipe(gulp.dest('./app/dist/js'));
+});
 
 // launch browser in a port
 gulp.task('open', function(){

@@ -1,10 +1,10 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'gulp' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'react-tools' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.37
 4 verbose node symlink /usr/bin/node
-5 verbose cache add [ 'gulp', null ]
-6 verbose cache add name=undefined spec="gulp" args=["gulp",null]
+5 verbose cache add [ 'react-tools', null ]
+6 verbose cache add name=undefined spec="react-tools" args=["react-tools",null]
 7 verbose parsed url { protocol: null,
 7 verbose parsed url   slashes: null,
 7 verbose parsed url   auth: null,
@@ -14,193 +14,185 @@
 7 verbose parsed url   hash: null,
 7 verbose parsed url   search: null,
 7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'gulp',
-7 verbose parsed url   path: 'gulp',
-7 verbose parsed url   href: 'gulp' }
-8 silly lockFile 9750c68d-gulp gulp
-9 verbose lock gulp /home/boom/.npm/9750c68d-gulp.lock
-10 silly lockFile 9750c68d-gulp gulp
-11 silly lockFile 9750c68d-gulp gulp
-12 verbose addNamed [ 'gulp', '' ]
+7 verbose parsed url   pathname: 'react-tools',
+7 verbose parsed url   path: 'react-tools',
+7 verbose parsed url   href: 'react-tools' }
+8 silly lockFile 0f761efe-react-tools react-tools
+9 verbose lock react-tools /home/boom/.npm/0f761efe-react-tools.lock
+10 silly lockFile 0f761efe-react-tools react-tools
+11 silly lockFile 0f761efe-react-tools react-tools
+12 verbose addNamed [ 'react-tools', '' ]
 13 verbose addNamed [ null, '*' ]
-14 silly lockFile 72f4391e-gulp gulp@
-15 verbose lock gulp@ /home/boom/.npm/72f4391e-gulp.lock
-16 silly addNameRange { name: 'gulp', range: '*', hasData: false }
-17 verbose request where is /gulp
+14 silly lockFile 47fcd5e0-react-tools react-tools@
+15 verbose lock react-tools@ /home/boom/.npm/47fcd5e0-react-tools.lock
+16 silly addNameRange { name: 'react-tools', range: '*', hasData: false }
+17 verbose request where is /react-tools
 18 verbose request registry https://registry.npmjs.org/
-19 verbose request id a48779ef1526104a
-20 verbose url raw /gulp
-21 verbose url resolving [ 'https://registry.npmjs.org/', './gulp' ]
-22 verbose url resolved https://registry.npmjs.org/gulp
-23 verbose request where is https://registry.npmjs.org/gulp
-24 info trying registry request attempt 1 at 17:26:09
-25 verbose etag "6CJ39OTOYNPVC0ZY9TIQMPMT1"
-26 http GET https://registry.npmjs.org/gulp
-27 http 304 https://registry.npmjs.org/gulp
+19 verbose request id 16344634da62e799
+20 verbose url raw /react-tools
+21 verbose url resolving [ 'https://registry.npmjs.org/', './react-tools' ]
+22 verbose url resolved https://registry.npmjs.org/react-tools
+23 verbose request where is https://registry.npmjs.org/react-tools
+24 info trying registry request attempt 1 at 22:53:42
+25 verbose etag "16KJK3HEXIU7DDN2BVOBEBS5W"
+26 http GET https://registry.npmjs.org/react-tools
+27 http 304 https://registry.npmjs.org/react-tools
 28 silly registry.get cb [ 304,
-28 silly registry.get   { date: 'Tue, 23 Jun 2015 00:26:10 GMT',
+28 silly registry.get   { date: 'Tue, 23 Jun 2015 05:53:43 GMT',
 28 silly registry.get     via: '1.1 varnish',
 28 silly registry.get     'cache-control': 'max-age=60',
-28 silly registry.get     etag: '"6CJ39OTOYNPVC0ZY9TIQMPMT1"',
-28 silly registry.get     age: '41',
+28 silly registry.get     etag: '"16KJK3HEXIU7DDN2BVOBEBS5W"',
+28 silly registry.get     age: '22',
 28 silly registry.get     connection: 'keep-alive',
-28 silly registry.get     'x-served-by': 'cache-lax1423-LAX',
+28 silly registry.get     'x-served-by': 'cache-lax1421-LAX',
 28 silly registry.get     'x-cache': 'HIT',
 28 silly registry.get     'x-cache-hits': '1',
-28 silly registry.get     'x-timer': 'S1435019170.068122,VS0,VE0',
+28 silly registry.get     'x-timer': 'S1435038823.240184,VS0,VE1',
 28 silly registry.get     vary: 'Accept' } ]
-29 verbose etag https://registry.npmjs.org/gulp from cache
-30 silly addNameRange number 2 { name: 'gulp', range: '*', hasData: true }
-31 silly addNameRange versions [ 'gulp',
-31 silly addNameRange   [ '0.0.1',
-31 silly addNameRange     '0.0.2',
-31 silly addNameRange     '0.0.3',
-31 silly addNameRange     '0.0.4',
-31 silly addNameRange     '0.0.5',
-31 silly addNameRange     '0.0.7',
-31 silly addNameRange     '0.0.8',
-31 silly addNameRange     '0.0.9',
-31 silly addNameRange     '0.1.0',
-31 silly addNameRange     '0.2.0',
-31 silly addNameRange     '1.0.0',
-31 silly addNameRange     '1.1.0',
-31 silly addNameRange     '1.2.0',
-31 silly addNameRange     '1.2.1',
-31 silly addNameRange     '2.0.0',
-31 silly addNameRange     '2.0.1',
-31 silly addNameRange     '2.1.0',
-31 silly addNameRange     '2.2.0',
-31 silly addNameRange     '2.3.0',
-31 silly addNameRange     '2.4.0',
-31 silly addNameRange     '2.4.1',
-31 silly addNameRange     '2.6.0',
-31 silly addNameRange     '2.6.1',
-31 silly addNameRange     '2.7.0',
-31 silly addNameRange     '3.0.0',
-31 silly addNameRange     '3.1.1',
-31 silly addNameRange     '3.1.2',
-31 silly addNameRange     '3.1.3',
-31 silly addNameRange     '3.1.4',
-31 silly addNameRange     '3.2.0',
-31 silly addNameRange     '3.2.1',
-31 silly addNameRange     '3.2.2',
-31 silly addNameRange     '3.2.3',
-31 silly addNameRange     '3.2.4',
-31 silly addNameRange     '3.2.5',
-31 silly addNameRange     '3.3.0',
-31 silly addNameRange     '3.3.1',
-31 silly addNameRange     '3.3.2',
-31 silly addNameRange     '3.3.4',
-31 silly addNameRange     '3.4.0',
-31 silly addNameRange     '3.5.0',
-31 silly addNameRange     '3.5.1',
-31 silly addNameRange     '3.5.2',
-31 silly addNameRange     '3.5.5',
-31 silly addNameRange     '3.5.6',
-31 silly addNameRange     '3.6.0',
-31 silly addNameRange     '3.6.1',
-31 silly addNameRange     '3.6.2',
-31 silly addNameRange     '3.7.0',
-31 silly addNameRange     '3.8.0',
-31 silly addNameRange     '3.8.1',
-31 silly addNameRange     '3.8.2',
-31 silly addNameRange     '3.8.3',
-31 silly addNameRange     '3.8.4',
-31 silly addNameRange     '3.8.5',
-31 silly addNameRange     '3.8.6',
-31 silly addNameRange     '3.8.7',
-31 silly addNameRange     '3.8.8',
-31 silly addNameRange     '3.8.9',
-31 silly addNameRange     '3.8.10',
-31 silly addNameRange     '3.8.11',
-31 silly addNameRange     '3.9.0' ] ]
-32 verbose addNamed [ 'gulp', '3.9.0' ]
-33 verbose addNamed [ '3.9.0', '3.9.0' ]
-34 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
-35 verbose lock gulp@3.9.0 /home/boom/.npm/c2697a61-gulp-3-9-0.lock
-36 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
-37 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
-38 silly lockFile 72f4391e-gulp gulp@
-39 silly lockFile 72f4391e-gulp gulp@
-40 silly resolved [ { name: 'gulp',
-40 silly resolved     description: 'The streaming build system',
-40 silly resolved     version: '3.9.0',
-40 silly resolved     homepage: 'http://gulpjs.com',
-40 silly resolved     repository: { type: 'git', url: 'git+https://github.com/gulpjs/gulp.git' },
-40 silly resolved     author:
-40 silly resolved      { name: 'Fractal',
-40 silly resolved        email: 'contact@wearefractal.com',
-40 silly resolved        url: 'http://wearefractal.com/' },
-40 silly resolved     tags: [ 'build', 'stream', 'system', 'make', 'tool', 'asset', 'pipeline' ],
-40 silly resolved     files: [ 'index.js', 'lib', 'bin', 'completion' ],
-40 silly resolved     bin: { gulp: './bin/gulp.js' },
-40 silly resolved     man: [ 'gulp.1' ],
-40 silly resolved     dependencies:
-40 silly resolved      { archy: '^1.0.0',
-40 silly resolved        chalk: '^1.0.0',
-40 silly resolved        deprecated: '^0.0.1',
-40 silly resolved        'gulp-util': '^3.0.0',
-40 silly resolved        interpret: '^0.6.2',
-40 silly resolved        liftoff: '^2.1.0',
-40 silly resolved        minimist: '^1.1.0',
-40 silly resolved        orchestrator: '^0.3.0',
-40 silly resolved        'pretty-hrtime': '^1.0.0',
-40 silly resolved        semver: '^4.1.0',
-40 silly resolved        tildify: '^1.0.0',
-40 silly resolved        v8flags: '^2.0.2',
-40 silly resolved        'vinyl-fs': '^0.3.0' },
+29 verbose etag https://registry.npmjs.org/react-tools from cache
+30 silly addNameRange number 2 { name: 'react-tools', range: '*', hasData: true }
+31 silly addNameRange versions [ 'react-tools',
+31 silly addNameRange   [ '0.3.0',
+31 silly addNameRange     '0.3.1',
+31 silly addNameRange     '0.3.2',
+31 silly addNameRange     '0.3.3',
+31 silly addNameRange     '0.4.0',
+31 silly addNameRange     '0.4.1',
+31 silly addNameRange     '0.5.0',
+31 silly addNameRange     '0.5.1',
+31 silly addNameRange     '0.4.2',
+31 silly addNameRange     '0.5.2',
+31 silly addNameRange     '0.8.0',
+31 silly addNameRange     '0.9.0-rc1',
+31 silly addNameRange     '0.9.0',
+31 silly addNameRange     '0.10.0-rc1',
+31 silly addNameRange     '0.10.0',
+31 silly addNameRange     '0.11.0-rc1',
+31 silly addNameRange     '0.11.0',
+31 silly addNameRange     '0.11.1',
+31 silly addNameRange     '0.11.2',
+31 silly addNameRange     '0.12.0-rc1',
+31 silly addNameRange     '0.12.0',
+31 silly addNameRange     '0.12.1',
+31 silly addNameRange     '0.12.2',
+31 silly addNameRange     '0.13.0-alpha.1',
+31 silly addNameRange     '0.13.0-alpha.2',
+31 silly addNameRange     '0.13.0-beta.1',
+31 silly addNameRange     '0.13.0-beta.2',
+31 silly addNameRange     '0.13.0-rc1',
+31 silly addNameRange     '0.13.0-rc2',
+31 silly addNameRange     '0.13.0',
+31 silly addNameRange     '0.13.1',
+31 silly addNameRange     '0.13.2',
+31 silly addNameRange     '0.13.3',
+31 silly addNameRange     '0.14.0-alpha1',
+31 silly addNameRange     '0.14.0-alpha2',
+31 silly addNameRange     '0.14.0-alpha3' ] ]
+32 verbose addNamed [ 'react-tools', '0.13.3' ]
+33 verbose addNamed [ '0.13.3', '0.13.3' ]
+34 silly lockFile a003229d-react-tools-0-13-3 react-tools@0.13.3
+35 verbose lock react-tools@0.13.3 /home/boom/.npm/a003229d-react-tools-0-13-3.lock
+36 silly lockFile a003229d-react-tools-0-13-3 react-tools@0.13.3
+37 silly lockFile a003229d-react-tools-0-13-3 react-tools@0.13.3
+38 silly lockFile 47fcd5e0-react-tools react-tools@
+39 silly lockFile 47fcd5e0-react-tools react-tools@
+40 silly resolved [ { name: 'react-tools',
+40 silly resolved     description: 'A set of complementary tools to React, including the JSX transformer.',
+40 silly resolved     version: '0.13.3',
+40 silly resolved     keywords: [ 'react', 'jsx', 'transformer', 'view' ],
+40 silly resolved     homepage: 'https://facebook.github.io/react',
+40 silly resolved     bugs: { url: 'https://github.com/facebook/react/issues' },
+40 silly resolved     license: 'BSD-3-Clause',
+40 silly resolved     files:
+40 silly resolved      [ 'main.js',
+40 silly resolved        'bin/jsx',
+40 silly resolved        'src/',
+40 silly resolved        'vendor/fbtransform/',
+40 silly resolved        'vendor/inline-source-map.js' ],
+40 silly resolved     main: 'main.js',
+40 silly resolved     bin: { jsx: './bin/jsx' },
+40 silly resolved     repository: { type: 'git', url: 'https://github.com/facebook/react' },
+40 silly resolved     dependencies: { commoner: '^0.10.0', jstransform: '^10.1.0' },
 40 silly resolved     devDependencies:
-40 silly resolved      { coveralls: '^2.7.0',
-40 silly resolved        'graceful-fs': '^3.0.0',
-40 silly resolved        istanbul: '^0.3.0',
-40 silly resolved        jscs: '~1.12.0',
-40 silly resolved        jshint: '^2.5.0',
-40 silly resolved        'jshint-stylish': '^1.0.0',
-40 silly resolved        'marked-man': '^0.1.3',
-40 silly resolved        mkdirp: '^0.5.0',
-40 silly resolved        mocha: '^2.0.1',
-40 silly resolved        'mocha-lcov-reporter': '^0.0.1',
-40 silly resolved        q: '^1.0.0',
-40 silly resolved        rimraf: '^2.2.5',
-40 silly resolved        should: '^5.0.1' },
+40 silly resolved      { benchmark: '~1.0.0',
+40 silly resolved        browserify: '^9.0.3',
+40 silly resolved        'bundle-collapser': '^1.1.1',
+40 silly resolved        'coffee-script': '^1.8.0',
+40 silly resolved        coverify: '~1.0.4',
+40 silly resolved        derequire: '^2.0.0',
+40 silly resolved        envify: '^3.0.0',
+40 silly resolved        es3ify: '~0.1.2',
+40 silly resolved        'es5-shim': '^4.0.0',
+40 silly resolved        eslint: '^0.14.1',
+40 silly resolved        'esprima-fb': '^13001.1001.0-dev-harmony-fb',
+40 silly resolved        grunt: '~0.4.2',
+40 silly resolved        'grunt-cli': '~0.1.9',
+40 silly resolved        'grunt-compare-size': '~0.4.0',
+40 silly resolved        'grunt-contrib-clean': '^0.6.0',
+40 silly resolved        'grunt-contrib-compress': '^0.13.0',
+40 silly resolved        'grunt-contrib-connect': '~0.6.0',
+40 silly resolved        'grunt-contrib-jshint': '^0.10.0',
+40 silly resolved        'grunt-jest': '^0.1.2',
+40 silly resolved        'gzip-js': '~0.3.2',
+40 silly resolved        'jasmine-tapreporter': '~0.2.2',
+40 silly resolved        'jest-cli': '^0.2.1',
+40 silly resolved        optimist: '~0.6.0',
+40 silly resolved        phantomjs: '~1.9',
+40 silly resolved        platform: '^1.1.0',
+40 silly resolved        populist: '~0.1.6',
+40 silly resolved        recast: '^0.9.11',
+40 silly resolved        'sauce-tunnel': '~1.1.0',
+40 silly resolved        tmp: '~0.0.18',
+40 silly resolved        typescript: '^1.4.0',
+40 silly resolved        'uglify-js': '^2.4.20',
+40 silly resolved        uglifyify: '^3.0.1',
+40 silly resolved        wd: '~0.2.6' },
+40 silly resolved     engines: { node: '>=0.10.0' },
+40 silly resolved     preferGlobal: true,
+40 silly resolved     commonerConfig: { version: 4 },
 40 silly resolved     scripts:
-40 silly resolved      { prepublish: 'marked-man --name gulp docs/CLI.md > gulp.1',
-40 silly resolved        lint: 'jshint lib bin test index.js --reporter node_modules/jshint-stylish/stylish.js --exclude node_modules && jscs lib bin test index.js',
-40 silly resolved        test: 'npm run-script lint && mocha --reporter spec',
-40 silly resolved        coveralls: 'istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage' },
-40 silly resolved     engines: { node: '>= 0.9' },
-40 silly resolved     license: 'MIT',
-40 silly resolved     gitHead: '657213a52d5e9c19b85df6a42f76341a98c08ae8',
-40 silly resolved     bugs: { url: 'https://github.com/gulpjs/gulp/issues' },
-40 silly resolved     _id: 'gulp@3.9.0',
-40 silly resolved     _shasum: 'cf1fba4cb558bb8c6ae6c9613f583ae2620d214a',
-40 silly resolved     _from: 'gulp@',
-40 silly resolved     _npmVersion: '2.8.3',
-40 silly resolved     _nodeVersion: '0.10.36',
-40 silly resolved     _npmUser: { name: 'phated', email: 'blaine@iceddev.com' },
+40 silly resolved      { test: 'jest',
+40 silly resolved        jest: 'jest',
+40 silly resolved        lint: 'eslint src',
+40 silly resolved        build: 'grunt build' },
+40 silly resolved     jest:
+40 silly resolved      { rootDir: '',
+40 silly resolved        scriptPreprocessor: 'jest/preprocessor.js',
+40 silly resolved        setupEnvScriptFile: 'jest/environment.js',
+40 silly resolved        persistModuleRegistryBetweenSpecs: true,
+40 silly resolved        testFileExtensions: [Object],
+40 silly resolved        modulePathIgnorePatterns: [Object],
+40 silly resolved        testPathIgnorePatterns: [Object],
+40 silly resolved        unmockedModulePathPatterns: [Object] },
+40 silly resolved     _id: 'react-tools@0.13.3',
+40 silly resolved     _shasum: 'da6ac7d4d7777a59a5e951cf46e72fd4b6b40a2c',
+40 silly resolved     _resolved: 'https://registry.npmjs.org/react-tools/-/react-tools-0.13.3.tgz',
+40 silly resolved     _from: 'react-tools@',
+40 silly resolved     _npmVersion: '2.7.3',
+40 silly resolved     _nodeVersion: '0.10.38',
+40 silly resolved     _npmUser: { name: 'zpao', email: 'paul@oshannessy.com' },
 40 silly resolved     maintainers: [ [Object], [Object] ],
 40 silly resolved     dist:
-40 silly resolved      { shasum: 'cf1fba4cb558bb8c6ae6c9613f583ae2620d214a',
-40 silly resolved        tarball: 'http://registry.npmjs.org/gulp/-/gulp-3.9.0.tgz' },
+40 silly resolved      { shasum: 'da6ac7d4d7777a59a5e951cf46e72fd4b6b40a2c',
+40 silly resolved        tarball: 'http://registry.npmjs.org/react-tools/-/react-tools-0.13.3.tgz' },
 40 silly resolved     directories: {},
-40 silly resolved     _resolved: 'https://registry.npmjs.org/gulp/-/gulp-3.9.0.tgz',
 40 silly resolved     readme: 'ERROR: No README data found!' } ]
-41 info install gulp@3.9.0 into /usr/lib
-42 info installOne gulp@3.9.0
-43 verbose lib/node_modules/gulp unbuild
-44 verbose tar unpack /home/boom/.npm/gulp/3.9.0/package.tgz
-45 silly lockFile df399f84-tar-usr-lib-node-modules-gulp tar:///usr/lib/node_modules/gulp
-46 verbose lock tar:///usr/lib/node_modules/gulp /home/boom/.npm/df399f84-tar-usr-lib-node-modules-gulp.lock
-47 silly lockFile 259cd821--boom-npm-gulp-3-9-0-package-tgz tar:///home/boom/.npm/gulp/3.9.0/package.tgz
-48 verbose lock tar:///home/boom/.npm/gulp/3.9.0/package.tgz /home/boom/.npm/259cd821--boom-npm-gulp-3-9-0-package-tgz.lock
+41 info install react-tools@0.13.3 into /usr/lib
+42 info installOne react-tools@0.13.3
+43 verbose lib/node_modules/react-tools unbuild
+44 verbose tar unpack /home/boom/.npm/react-tools/0.13.3/package.tgz
+45 silly lockFile eaf1e453-usr-lib-node-modules-react-tools tar:///usr/lib/node_modules/react-tools
+46 verbose lock tar:///usr/lib/node_modules/react-tools /home/boom/.npm/eaf1e453-usr-lib-node-modules-react-tools.lock
+47 silly lockFile c9c704a5-m-react-tools-0-13-3-package-tgz tar:///home/boom/.npm/react-tools/0.13.3/package.tgz
+48 verbose lock tar:///home/boom/.npm/react-tools/0.13.3/package.tgz /home/boom/.npm/c9c704a5-m-react-tools-0-13-3-package-tgz.lock
 49 silly gunzTarPerm modes [ '775', '664' ]
-50 error Error: EACCES, mkdir '/usr/lib/node_modules/gulp'
-50 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/gulp']
+50 error Error: EACCES, mkdir '/usr/lib/node_modules/react-tools'
+50 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/react-tools']
 50 error   errno: 3,
 50 error   code: 'EACCES',
-50 error   path: '/usr/lib/node_modules/gulp',
+50 error   path: '/usr/lib/node_modules/react-tools',
 50 error   fstream_type: 'Directory',
-50 error   fstream_path: '/usr/lib/node_modules/gulp',
+50 error   fstream_path: '/usr/lib/node_modules/react-tools',
 50 error   fstream_class: 'DirWriter',
 50 error   fstream_stack:
 50 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
@@ -208,17 +200,17 @@
 50 error      'Object.oncomplete (fs.js:108:15)' ] }
 51 error Please try running this command again as root/Administrator.
 52 error System Linux 3.13.0-48-generic
-53 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "gulp"
+53 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "react-tools"
 54 error cwd /home/boom/workspace/tutsreact/RTProblem
 55 error node -v v0.10.37
 56 error npm -v 1.4.28
-57 error path /usr/lib/node_modules/gulp
-58 error fstream_path /usr/lib/node_modules/gulp
+57 error path /usr/lib/node_modules/react-tools
+58 error fstream_path /usr/lib/node_modules/react-tools
 59 error fstream_type Directory
 60 error fstream_class DirWriter
 61 error code EACCES
 62 error errno 3
-63 error stack Error: EACCES, mkdir '/usr/lib/node_modules/gulp'
+63 error stack Error: EACCES, mkdir '/usr/lib/node_modules/react-tools'
 64 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
 64 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
 64 error fstream_stack Object.oncomplete (fs.js:108:15)
