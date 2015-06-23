@@ -3,6 +3,7 @@
 var React = require('react');
 
 var ShowAddButton = React.createClass({
+
   render: function() {
 
     var classString, buttonText;
@@ -22,6 +23,7 @@ var ShowAddButton = React.createClass({
       </button>
     );
   }
+
 });
 
 module.exports = ShowAddButton;

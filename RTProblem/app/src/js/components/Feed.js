@@ -4,7 +4,7 @@ var React         = require('react');
 var ShowAddButton = require('./ShowAddButton');
 var FeedForm      = require('./FeedForm');
 var FeedList      = require('./FeedList');
-
+var _             = require('lodash');
 
 var Feed = React.createClass({
 
